@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prothom Alo Clone
+
+A pixel-perfect clone of the [Prothom Alo](https://www.prothomalo.com/) news portal, built with **Next.js**, **Tailwind CSS**, and **Keystatic CMS**.
+
+## Features
+
+- **Authentic Design**: Custom Bengali fonts, color scheme, and responsive layout matching the original site.
+- **Dynamic Content**: Powered by **Keystatic**, a file-based CMS. No database required.
+- **Search Functionality**: Client-side search with instant filtering.
+- **Dark Mode**: Fully supported with a toggle switch.
+- **Responsive**: Optimized for Mobile, Tablet, and Desktop.
 
 ## Getting Started
 
-First, run the development server:
+1.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
+    Visit `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3.  **Manage Content (CMS)**:
+    Visit `http://localhost:3000/keystatic` to add or edit news articles.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is optimized for deployment on **Vercel**.
 
-## Learn More
+1.  Push the code to a GitHub repository.
+2.  Import the repository into Vercel.
+3.  Vercel will automatically build and deploy the site.
 
-To learn more about Next.js, take a look at the following resources:
+**Note on CMS**: Since this uses Keystatic's `local` mode, content edits should be made locally and pushed to GitHub. The live site will serve the static content. To enable live editing in production, configure Keystatic for GitHub mode.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/`: Next.js App Router pages and layouts.
+- `components/`: Reusable UI components (Header, Footer, etc.).
+- `content/`: stored content files (news posts).
+- `lib/`: Utility functions and data fetchers.
+- `public/`: Static assets (images, fonts).
+- `keystatic.config.ts`: CMS configuration.
