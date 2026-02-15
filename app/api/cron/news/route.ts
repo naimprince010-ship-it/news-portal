@@ -13,7 +13,13 @@ const AUTHOR_NAME = 'NewsBot';
 export async function GET(request: NextRequest) {
     // Security Check
     const authHeader = request.headers.get('authorization');
-    if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+    const cronSecret = process.env.CRON_SECRET;
+    const key = request.nextUrl.searchParams.get('key');
+
+    if (
+        authHeader !== `Bearer ${cronSecret}` &&
+        key !== cronSecret
+    ) {
         return new NextResponse('Unauthorized', { status: 401 });
     }
 
